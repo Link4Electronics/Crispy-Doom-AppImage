@@ -7,7 +7,7 @@ _make_symlinks() {
 	mkdir -p "$bindir"
 	cd "$APPDIR"/bin
 	set +e
-	set -- ./crispy* ./quick*
+	set -- ./crispy*
 	for b do
 		ln -sv "$APPIMAGE" "$bindir"/"${b##*/}" 2>/dev/null
 	done
