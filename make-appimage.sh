@@ -10,6 +10,8 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/128x128/apps/crispy-doom.png
 export DESKTOP=/usr/share/applications/io.github.fabiangreffrath.Doom.desktop
 export STARTUPWMCLASS=crispy-doom
+export DEPLOY_OPENGL=1
+export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/crispy-* /usr/lib/libfluidsynth.so*
