@@ -18,9 +18,10 @@ get-debloated-pkgs --add-common --prefer-nano
 # If the application needs to be manually built that has to be done down here
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
-#
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+if [ "${DEVEL_RELEASE-}" = 1 ]; then
+	package=crispy-doom-git
+else
+	package=crispy-doom
+fi
+make-aur-package "$package"
+pacman -Q "$package" | awk '{print $2; exit}' > ~/version
